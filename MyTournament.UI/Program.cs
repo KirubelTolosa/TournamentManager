@@ -20,9 +20,11 @@ namespace MyTournament.UI
         }
 
         public static Team[] teamDirectory = new Team[100];
+        public static Member[] memberDirectory = new Member[600];
 
         public static int Counter = 0;
-       
+        public static int memberCounter = 0;
+               
         public static void AddTeams(string name, string id)
         {
             
@@ -33,5 +35,16 @@ namespace MyTournament.UI
                 Counter++;
             
         }
+        public static void AddMember(string firstName, string lastName)
+        {
+
+            var member = new Member();
+            member.firstName = firstName;
+            member.lastName = lastName;
+            memberDirectory[memberCounter] = member;
+            memberCounter++;
+        }
+
+
     }
 }

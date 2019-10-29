@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace MyTournament.UI
 {
     public partial class Home : Form
@@ -27,6 +28,36 @@ namespace MyTournament.UI
         private void btnViewMembers_Click(object sender, EventArgs e)
         {
             lblMessage.Text = " you clicked View members!";
+            var frmAddMembers = new ViewMembers();
+            frmAddMembers.Show(); 
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            lblMessage.Text = "You selected to add team";
+            var frmAddTeam = new AddTeam();
+            frmAddTeam.Show(); 
+        }
+
+        private void BtnAddMembers_Click(object sender, EventArgs e)
+        {
+            var frmAddMembers = new AddMember();
+            frmAddMembers.Show(); 
+        }
+
+        private void LblWelcome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblMessage_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

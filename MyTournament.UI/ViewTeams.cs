@@ -32,6 +32,7 @@ namespace MyTournament.UI
         {
             for (int i = 0; i < Program.Counter; i++)
             {
+
                 listView1.Items.Add(Program.teamDirectory[i].Id + "-" + Program.teamDirectory[i].Name);
             }
         }
@@ -41,5 +42,7 @@ namespace MyTournament.UI
             var frmAddTeam = new AddTeam();
             frmAddTeam.Show();
         }
+
+      
     }
 }

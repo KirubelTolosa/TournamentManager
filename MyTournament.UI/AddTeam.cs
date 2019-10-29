@@ -20,7 +20,11 @@ namespace MyTournament.UI
         private void btnSubmit_Click(object sender, EventArgs e)
         {
               Program.AddTeams(this.txtTeamName.Text, this.txtTeamId.Text);
-              
+        }
+
+        private void TxtTeamName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
