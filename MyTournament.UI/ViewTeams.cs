@@ -19,21 +19,21 @@ namespace MyTournament.UI
 
         private void ViewTeams_Load(object sender, EventArgs e)
         {
-            var len = Program.teamDirectory.Length;
-
-            for (int i = 0; i < Program.Counter; i++)
-            {
-                listView1.Items.Add(Program.teamDirectory[i].Id +"-" + Program.teamDirectory[i].Name);
-            }
+            LoadTeams();
             
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < Program.Counter; i++)
-            {
+            LoadTeams();
+        }
 
-                listView1.Items.Add(Program.teamDirectory[i].Id + "-" + Program.teamDirectory[i].Name);
+        private void LoadTeams()
+        {
+            listViewTeams.Items.Clear();
+            foreach (var curr in Program.teamDirectory)
+            {
+                listViewTeams.Items.Add(curr.Id + "-" + curr.Name);
             }
         }
 

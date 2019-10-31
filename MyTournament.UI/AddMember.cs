@@ -25,8 +25,7 @@ namespace MyTournament.UI
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
             Program.AddMember(this.txtFirstName.Text, this.txtLastName.Text);
-            var a = Program.memberCounter;
-            lblNumberOfMembers.Text = "You have entered" + a + "members";
+            lblNumberOfMembers.Text = "You have entered" + Program.memberDirectory.Count + "members";
         }
 
         private void LblNumberOfMembers_Click(object sender, EventArgs e)

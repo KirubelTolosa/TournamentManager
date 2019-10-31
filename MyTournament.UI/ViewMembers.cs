@@ -38,12 +38,8 @@ namespace MyTournament.UI
 
         private void ListViewMembers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var listView = (ListView)sender;
-
-
-           
-            var selectedItem = listView.SelectedItems[0];
-             
+            var listView = (ListView)sender;  
+            var selectedItem = listView.SelectedItems[0];           
             lblSelectionStatus.Text = "You have selected an " + selectedItem.Text;
         }
 

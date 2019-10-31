@@ -109,7 +109,7 @@ namespace MyTournament.UI
         {
             listViewMembers.Items.Clear();
 
-            for (int i = 0; i < Program.memberCounter; i++)
+            for (int i = 0; i < Program.memberDirectory.Count; i++)
             {
                 listViewMembers.Items.Add(Program.memberDirectory[i].firstName + "-" + Program.memberDirectory[i].lastName);
             }

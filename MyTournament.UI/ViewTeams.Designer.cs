@@ -30,7 +30,7 @@
         {
             this.btnAddTeam = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewTeams = new System.Windows.Forms.ListView();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -56,13 +56,13 @@
             // 
             // listView1
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(124, 158);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(861, 381);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewTeams.HideSelection = false;
+            this.listViewTeams.Location = new System.Drawing.Point(124, 158);
+            this.listViewTeams.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewTeams.Name = "listView1";
+            this.listViewTeams.Size = new System.Drawing.Size(861, 381);
+            this.listViewTeams.TabIndex = 2;
+            this.listViewTeams.UseCompatibleStateImageBehavior = false;
             // 
             // btnRefresh
             // 
@@ -81,7 +81,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listViewTeams);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddTeam);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -97,7 +97,7 @@
 
         private System.Windows.Forms.Button btnAddTeam;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewTeams;
         private System.Windows.Forms.Button btnRefresh;
     }
 }

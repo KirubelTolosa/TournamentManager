@@ -19,30 +19,28 @@ namespace MyTournament.UI
             Application.Run(new Home());
         }
 
-        public static Team[] teamDirectory = new Team[100];
-        public static Member[] memberDirectory = new Member[600];
-
-        public static int Counter = 0;
-        public static int memberCounter = 0;
+        public static List<Team> teamDirectory = new List<Team>();
+        public static List<Member> memberDirectory = new List<Member>();
                
         public static void AddTeams(string name, string id)
         {
-            
-                var team = new Team();
-                team.Name = name;
-                team.Id = id;
-                teamDirectory[Counter] = team;
-                Counter++;
+            teamDirectory.Add(new Team()
+                            {
+                                Name = name,
+                                Id = id
+                            });   
             
         }
         public static void AddMember(string firstName, string lastName)
         {
-
-            var member = new Member();
-            member.firstName = firstName;
-            member.lastName = lastName;
-            memberDirectory[memberCounter] = member;
-            memberCounter++;
+            memberDirectory.Add(
+                            new Member
+                            {
+                                firstName = firstName,
+                                lastName = lastName
+                            });
+            
+           
         }
 
 
