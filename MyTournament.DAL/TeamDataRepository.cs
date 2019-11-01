@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyTournament.DAL.DataModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,23 @@ namespace MyTournament.DAL
         //{
         //    //get team by Id
         //}
+
+        public static List<TeamDADto> GetAllTeams()
+        {
+            //go to the database 
+            List<TeamDADto> items = new List<TeamDADto>();
+            items.AddRange(new[]{ new TeamDADto()
+                                    {
+                                        Name = "chelsea" , Id = "1001"
+                                    },
+                                      new TeamDADto()
+                                        {
+                                            Name = "Manchester",
+                                            Id = "1002"
+                                        }
+                });
+            return items;
+        }
 
 
     }

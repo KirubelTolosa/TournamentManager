@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyTournament.BLL;
+using MyTournament.BLL.DataModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,9 +32,23 @@ namespace MyTournament.UI
 
         private void LoadTeams()
         {
+
+            //call the business logic service 
+            var teamBlDtos = TeamBLService.GetAllTeams();
+
+            List<Team> teams = new List<Team>();
+            foreach(var blDto in teamBlDtos)
+            {
+                teams.Add(new Team()
+                {
+                    Id = blDto.Id, Name = blDto.Name
+                });
+            }
+
+
             //load it to listViews
             listViewTeams.Items.Clear();
-            foreach (var curr in Program.teamDirectory)
+            foreach (var curr in teams)
             {
                 listViewTeams.Items.Add(curr.Id + "-" + curr.Name);
             }
@@ -44,7 +60,7 @@ namespace MyTournament.UI
            dt.Columns.Add(new DataColumn("Team Id", typeof(int)));
            dt.Columns.Add(new DataColumn("Team Name", typeof(string)));
 
-            foreach(Team team in Program.teamDirectory)
+            foreach(Team team in teams)
             {
                 var row = dt.NewRow();
                 row["Team Name"] = team.Name;
