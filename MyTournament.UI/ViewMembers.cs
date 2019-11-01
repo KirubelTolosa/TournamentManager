@@ -42,7 +42,5 @@ namespace MyTournament.UI
             var selectedItem = listView.SelectedItems[0];           
             lblSelectionStatus.Text = "You have selected an " + selectedItem.Text;
         }
-
-       
     }
 }

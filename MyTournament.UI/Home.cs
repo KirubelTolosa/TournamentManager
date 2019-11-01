@@ -21,7 +21,7 @@ namespace MyTournament.UI
         private void btnViewTeams_Click(object sender, EventArgs e)
         {
             lblMessage.Text = " you clicked View teams!";
-            listViewTeams frmViewTeams = new listViewTeams();
+            frmViewTeams frmViewTeams = new frmViewTeams();
             frmViewTeams.Show();
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace MyTournament.UI
 {
-    partial class listViewTeams
+    partial class frmViewTeams
     {
         /// <summary>
         /// Required designer variable.
@@ -32,14 +32,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listViewTeams = new System.Windows.Forms.ListView();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.gridViewTeams = new System.Windows.Forms.DataGridView();
+            this.clmnTeamName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnTeamID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTeams)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddTeam
             // 
-            this.btnAddTeam.Location = new System.Drawing.Point(784, 71);
-            this.btnAddTeam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddTeam.Location = new System.Drawing.Point(588, 58);
             this.btnAddTeam.Name = "btnAddTeam";
-            this.btnAddTeam.Size = new System.Drawing.Size(100, 28);
+            this.btnAddTeam.Size = new System.Drawing.Size(75, 23);
             this.btnAddTeam.TabIndex = 0;
             this.btnAddTeam.Text = "Add Team";
             this.btnAddTeam.UseVisualStyleBackColor = true;
@@ -48,46 +51,69 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(240, 261);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(180, 212);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 1;
             // 
-            // listView1
+            // listViewTeams
             // 
             this.listViewTeams.HideSelection = false;
-            this.listViewTeams.Location = new System.Drawing.Point(124, 158);
-            this.listViewTeams.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.listViewTeams.Name = "listView1";
-            this.listViewTeams.Size = new System.Drawing.Size(861, 381);
+            this.listViewTeams.Location = new System.Drawing.Point(93, 128);
+            this.listViewTeams.Name = "listViewTeams";
+            this.listViewTeams.Size = new System.Drawing.Size(188, 310);
             this.listViewTeams.TabIndex = 2;
             this.listViewTeams.UseCompatibleStateImageBehavior = false;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(136, 54);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefresh.Location = new System.Drawing.Point(102, 44);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(100, 28);
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // listViewTeams
+            // gridViewTeams
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.gridViewTeams.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridViewTeams.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmnTeamName,
+            this.clmnTeamID});
+            this.gridViewTeams.Location = new System.Drawing.Point(316, 128);
+            this.gridViewTeams.Name = "gridViewTeams";
+            this.gridViewTeams.Size = new System.Drawing.Size(472, 260);
+            this.gridViewTeams.TabIndex = 4;
+            // 
+            // clmnTeamName
+            // 
+            this.clmnTeamName.HeaderText = "Team Name";
+            this.clmnTeamName.Name = "clmnTeamName";
+            this.clmnTeamName.ReadOnly = true;
+            this.clmnTeamName.Visible = false;
+            // 
+            // clmnTeamID
+            // 
+            this.clmnTeamID.HeaderText = "Team ID";
+            this.clmnTeamID.Name = "clmnTeamID";
+            this.clmnTeamID.ReadOnly = true;
+            this.clmnTeamID.Visible = false;
+            // 
+            // frmViewTeams
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.gridViewTeams);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.listViewTeams);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddTeam);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "listViewTeams";
+            this.Name = "frmViewTeams";
             this.Text = "View Teams";
             this.Load += new System.EventHandler(this.ViewTeams_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTeams)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +125,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listViewTeams;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.DataGridView gridViewTeams;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnTeamName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnTeamID;
     }
 }

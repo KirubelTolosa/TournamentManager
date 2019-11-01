@@ -39,9 +39,10 @@ namespace MyTournament.UI
             // listViewMembers
             // 
             this.listViewMembers.HideSelection = false;
-            this.listViewMembers.Location = new System.Drawing.Point(243, 69);
+            this.listViewMembers.Location = new System.Drawing.Point(182, 56);
+            this.listViewMembers.Margin = new System.Windows.Forms.Padding(2);
             this.listViewMembers.Name = "listViewMembers";
-            this.listViewMembers.Size = new System.Drawing.Size(291, 314);
+            this.listViewMembers.Size = new System.Drawing.Size(219, 256);
             this.listViewMembers.TabIndex = 0;
             this.listViewMembers.UseCompatibleStateImageBehavior = false;
             this.listViewMembers.SelectedIndexChanged += new System.EventHandler(this.ListViewMembers_SelectedIndexChanged);
@@ -50,9 +51,10 @@ namespace MyTournament.UI
             // 
             this.lblMembersInTournament.AutoSize = true;
             this.lblMembersInTournament.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMembersInTournament.Location = new System.Drawing.Point(254, 37);
+            this.lblMembersInTournament.Location = new System.Drawing.Point(190, 30);
+            this.lblMembersInTournament.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMembersInTournament.Name = "lblMembersInTournament";
-            this.lblMembersInTournament.Size = new System.Drawing.Size(265, 18);
+            this.lblMembersInTournament.Size = new System.Drawing.Size(228, 15);
             this.lblMembersInTournament.TabIndex = 1;
             this.lblMembersInTournament.Text = "All members in the the tournament";
             this.lblMembersInTournament.Click += new System.EventHandler(this.Label1_Click);
@@ -60,9 +62,10 @@ namespace MyTournament.UI
             // btnAddMember
             // 
             this.btnAddMember.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAddMember.Location = new System.Drawing.Point(55, 83);
+            this.btnAddMember.Location = new System.Drawing.Point(41, 67);
+            this.btnAddMember.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddMember.Name = "btnAddMember";
-            this.btnAddMember.Size = new System.Drawing.Size(136, 32);
+            this.btnAddMember.Size = new System.Drawing.Size(102, 26);
             this.btnAddMember.TabIndex = 2;
             this.btnAddMember.Text = "AddMember";
             this.btnAddMember.UseVisualStyleBackColor = false;
@@ -71,9 +74,10 @@ namespace MyTournament.UI
             // btnRefresh
             // 
             this.btnRefresh.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnRefresh.Location = new System.Drawing.Point(55, 174);
+            this.btnRefresh.Location = new System.Drawing.Point(41, 141);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(136, 32);
+            this.btnRefresh.Size = new System.Drawing.Size(102, 26);
             this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
@@ -83,22 +87,24 @@ namespace MyTournament.UI
             // 
             this.lblSelectionStatus.AutoSize = true;
             this.lblSelectionStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectionStatus.Location = new System.Drawing.Point(240, 401);
+            this.lblSelectionStatus.Location = new System.Drawing.Point(180, 326);
+            this.lblSelectionStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSelectionStatus.Name = "lblSelectionStatus";
-            this.lblSelectionStatus.Size = new System.Drawing.Size(120, 17);
+            this.lblSelectionStatus.Size = new System.Drawing.Size(91, 13);
             this.lblSelectionStatus.TabIndex = 4;
             this.lblSelectionStatus.Text = "Selection status...";
             // 
             // ViewMembers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 449);
+            this.ClientSize = new System.Drawing.Size(477, 634);
             this.Controls.Add(this.lblSelectionStatus);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAddMember);
             this.Controls.Add(this.lblMembersInTournament);
             this.Controls.Add(this.listViewMembers);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ViewMembers";
             this.Text = "ViewMembers";
             this.ResumeLayout(false);
