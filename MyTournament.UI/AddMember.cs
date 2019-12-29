@@ -23,17 +23,14 @@ namespace MyTournament.UI
             // txtteam_IdDrop.DataSource = teamIds;
 
             // 2nd attempt = adding items to dropdown list  
-            foreach (var ids in teamIds)
+            foreach (var id in teamIds)
             {
                 
-                txtteam_IdDrop.Items.Add(ids);
+                txtteam_IdDrop.Items.Add(id);
             }
         }
 
-        private void AddMember_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
@@ -59,39 +56,6 @@ namespace MyTournament.UI
                 }
         }
 
-        private void LblId_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void LblName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblPosition_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Textteam_Id_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Txtteam_IdDrop_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+       
     }
 }

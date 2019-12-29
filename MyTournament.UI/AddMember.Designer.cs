@@ -59,7 +59,7 @@
             this.member_Id.Size = new System.Drawing.Size(19, 17);
             this.member_Id.TabIndex = 1;
             this.member_Id.Text = "Id";
-            this.member_Id.Click += new System.EventHandler(this.LblId_Click);
+            
             // 
             // memberName
             // 
@@ -110,7 +110,7 @@
             this.team_Id.Size = new System.Drawing.Size(58, 17);
             this.team_Id.TabIndex = 8;
             this.team_Id.Text = "team_Id";
-            this.team_Id.Click += new System.EventHandler(this.LblPosition_Click);
+            
             // 
             // txtposition
             // 
@@ -118,7 +118,7 @@
             this.txtposition.Name = "txtposition";
             this.txtposition.Size = new System.Drawing.Size(166, 22);
             this.txtposition.TabIndex = 11;
-            this.txtposition.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            
             // 
             // label2
             // 
@@ -128,7 +128,7 @@
             this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "Position";
-            this.label2.Click += new System.EventHandler(this.Label2_Click);
+            
             // 
             // txtteam_IdDrop
             // 
@@ -137,7 +137,7 @@
             this.txtteam_IdDrop.Name = "txtteam_IdDrop";
             this.txtteam_IdDrop.Size = new System.Drawing.Size(166, 24);
             this.txtteam_IdDrop.TabIndex = 12;
-            this.txtteam_IdDrop.SelectedIndexChanged += new System.EventHandler(this.Txtteam_IdDrop_SelectedIndexChanged);
+            
             // 
             // AddMember
             // 
@@ -157,7 +157,7 @@
             this.Controls.Add(this.btnSubmit);
             this.Name = "AddMember";
             this.Text = "AddMember";
-            this.Load += new System.EventHandler(this.AddMember_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 

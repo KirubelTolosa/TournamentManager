@@ -70,7 +70,7 @@ namespace MyTournament.UI
             this.listViewTeams.Size = new System.Drawing.Size(249, 381);
             this.listViewTeams.TabIndex = 2;
             this.listViewTeams.UseCompatibleStateImageBehavior = false;
-            this.listViewTeams.SelectedIndexChanged += new System.EventHandler(this.ListViewTeams_SelectedIndexChanged);
+            
             // 
             // btnRefresh
             // 

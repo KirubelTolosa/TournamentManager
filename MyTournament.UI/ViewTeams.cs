@@ -79,12 +79,7 @@ namespace MyTournament.UI
         {
             var frmAddTeam = new AddTeam();
             frmAddTeam.Show();
-        }
-
-        private void ListViewTeams_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        }    
 
         
     }
