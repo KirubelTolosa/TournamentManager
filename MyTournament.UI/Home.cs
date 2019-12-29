@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyTournament.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +17,13 @@ namespace MyTournament.UI
         public Home()
         {
             InitializeComponent();
+            var countMembers = MemberBLService.CountMembers();
+            lblNumberOfMembers.Text = countMembers + "  Members in Tournament!";
+            var teamcount = TeamBLService.CountTeams();
+            lblNumberOfTeams.Text = teamcount + "  teams in Tournament!";
         }
 
+        
         private void btnViewTeams_Click(object sender, EventArgs e)
         {
             lblMessage.Text = " you clicked View teams!";
@@ -56,6 +62,11 @@ namespace MyTournament.UI
         }
 
         private void LblMessage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NumberOfMembers_Click(object sender, EventArgs e)
         {
 
         }

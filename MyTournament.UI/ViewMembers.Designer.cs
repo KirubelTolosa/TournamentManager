@@ -29,32 +29,21 @@ namespace MyTournament.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.listViewMembers = new System.Windows.Forms.ListView();
             this.lblMembersInTournament = new System.Windows.Forms.Label();
             this.btnAddMember = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.lblSelectionStatus = new System.Windows.Forms.Label();
+            this.gridViewMembers = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMembers)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listViewMembers
-            // 
-            this.listViewMembers.HideSelection = false;
-            this.listViewMembers.Location = new System.Drawing.Point(182, 56);
-            this.listViewMembers.Margin = new System.Windows.Forms.Padding(2);
-            this.listViewMembers.Name = "listViewMembers";
-            this.listViewMembers.Size = new System.Drawing.Size(219, 256);
-            this.listViewMembers.TabIndex = 0;
-            this.listViewMembers.UseCompatibleStateImageBehavior = false;
-            this.listViewMembers.SelectedIndexChanged += new System.EventHandler(this.ListViewMembers_SelectedIndexChanged);
             // 
             // lblMembersInTournament
             // 
             this.lblMembersInTournament.AutoSize = true;
             this.lblMembersInTournament.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMembersInTournament.Location = new System.Drawing.Point(190, 30);
-            this.lblMembersInTournament.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMembersInTournament.Location = new System.Drawing.Point(51, 41);
             this.lblMembersInTournament.Name = "lblMembersInTournament";
-            this.lblMembersInTournament.Size = new System.Drawing.Size(228, 15);
+            this.lblMembersInTournament.Size = new System.Drawing.Size(265, 18);
             this.lblMembersInTournament.TabIndex = 1;
             this.lblMembersInTournament.Text = "All members in the the tournament";
             this.lblMembersInTournament.Click += new System.EventHandler(this.Label1_Click);
@@ -62,10 +51,10 @@ namespace MyTournament.UI
             // btnAddMember
             // 
             this.btnAddMember.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAddMember.Location = new System.Drawing.Point(41, 67);
-            this.btnAddMember.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddMember.Location = new System.Drawing.Point(730, 74);
+            this.btnAddMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddMember.Name = "btnAddMember";
-            this.btnAddMember.Size = new System.Drawing.Size(102, 26);
+            this.btnAddMember.Size = new System.Drawing.Size(136, 32);
             this.btnAddMember.TabIndex = 2;
             this.btnAddMember.Text = "AddMember";
             this.btnAddMember.UseVisualStyleBackColor = false;
@@ -74,10 +63,10 @@ namespace MyTournament.UI
             // btnRefresh
             // 
             this.btnRefresh.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnRefresh.Location = new System.Drawing.Point(41, 141);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefresh.Location = new System.Drawing.Point(730, 166);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(102, 26);
+            this.btnRefresh.Size = new System.Drawing.Size(136, 32);
             this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
@@ -87,31 +76,42 @@ namespace MyTournament.UI
             // 
             this.lblSelectionStatus.AutoSize = true;
             this.lblSelectionStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectionStatus.Location = new System.Drawing.Point(180, 326);
-            this.lblSelectionStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSelectionStatus.Location = new System.Drawing.Point(31, 510);
             this.lblSelectionStatus.Name = "lblSelectionStatus";
-            this.lblSelectionStatus.Size = new System.Drawing.Size(91, 13);
+            this.lblSelectionStatus.Size = new System.Drawing.Size(120, 17);
             this.lblSelectionStatus.TabIndex = 4;
             this.lblSelectionStatus.Text = "Selection status...";
             // 
+            // gridViewMembers
+            // 
+            this.gridViewMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridViewMembers.Location = new System.Drawing.Point(34, 74);
+            this.gridViewMembers.Name = "gridViewMembers";
+            this.gridViewMembers.RowHeadersWidth = 51;
+            this.gridViewMembers.RowTemplate.Height = 24;
+            this.gridViewMembers.Size = new System.Drawing.Size(656, 421);
+            this.gridViewMembers.TabIndex = 5;
+            this.gridViewMembers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewMembers_CellContentClick);
+            // 
             // ViewMembers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 634);
+            this.ClientSize = new System.Drawing.Size(895, 536);
+            this.Controls.Add(this.gridViewMembers);
             this.Controls.Add(this.lblSelectionStatus);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAddMember);
             this.Controls.Add(this.lblMembersInTournament);
-            this.Controls.Add(this.listViewMembers);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ViewMembers";
             this.Text = "ViewMembers";
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMembers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-        public  void LoadItems()
+       /* public  void LoadItems()
         {
             listViewMembers.Items.Clear();
 
@@ -119,14 +119,13 @@ namespace MyTournament.UI
             {
                 listViewMembers.Items.Add(Program.memberDirectory[i].firstName + "-" + Program.memberDirectory[i].lastName);
             }
-        }
+        } */
 
         #endregion
-
-        private System.Windows.Forms.ListView listViewMembers;
         private System.Windows.Forms.Label lblMembersInTournament;
         private System.Windows.Forms.Button btnAddMember;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label lblSelectionStatus;
+        private System.Windows.Forms.DataGridView gridViewMembers;
     }
 }

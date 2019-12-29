@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyTournament.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,8 @@ namespace MyTournament.UI
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-              Program.AddTeams(this.txtTeamName.Text, this.txtTeamId.Text);
+           // Program.AddTeams(this.txtTeamName.Text, this.txtTeamId.Text);
+            TeamBLService.AddTeam(this.txtTeamId.Text, this.txtTeamName.Text);
         }
 
         private void TxtTeamName_TextChanged(object sender, EventArgs e)

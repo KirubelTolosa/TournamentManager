@@ -31,13 +31,13 @@ namespace MyTournament.UI
                             });   
             
         }
-        public static void AddMember(string firstName, string lastName)
+        public static void AddMember(string Id, string Name)
         {
             memberDirectory.Add(
                             new Member
                             {
-                                firstName = firstName,
-                                lastName = lastName
+                                Id = Id,
+                                Name = Name
                             });
             
            

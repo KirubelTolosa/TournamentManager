@@ -18,19 +18,34 @@ namespace MyTournament.BLL
 
             List<TeamBLDto> blDtos = new List<TeamBLDto>();
 
-            foreach(var daDto in daDtos)
-            {
-                TeamBLDto blDto = new TeamBLDto
+                foreach(var daDto in daDtos)
                 {
-                    Name = daDto.Name,
-                    Id = daDto.Id
-                };
-                blDtos.Add(blDto);               
-            }
+                    TeamBLDto blDto = new TeamBLDto
+                    {
+                        Name = daDto.Name,
+                        Id = daDto.Id
+                    };
+                    blDtos.Add(blDto);               
+                }
 
             return blDtos;
         }
 
-        
+        public static void AddTeam(String teamId, String teamName) 
+        {
+            TeamDataRepository.AddTeam(teamId, teamName);
+        }
+
+        public static int CountTeams()
+        {
+            var teamcount = TeamDataRepository.CountTeams();
+            return teamcount;
+        }
+
+        public static List<string> GetTeamIds()
+        {
+            var teamIds = TeamDataRepository.GetTeamIds();
+            return teamIds;
+        }
     }
 }

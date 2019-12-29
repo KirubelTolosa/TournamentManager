@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MemberDataRepository.cs" />
+    <Compile Include="DataModel\MemberDADto.cs" />
     <Compile Include="DataModel\TeamDADto.cs" />
     <Compile Include="TeamDataRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

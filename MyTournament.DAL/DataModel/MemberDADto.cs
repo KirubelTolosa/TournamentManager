@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyTournament.UI
+namespace MyTournament.DAL.DataModel
 {
-    public class Member
+   public class MemberDADto
     {
         public string Id { get; set; }
         public string Name { get; set; }
         public string Position { get; set; }
         public string Team_ID { get; set; }
+
     }
 }

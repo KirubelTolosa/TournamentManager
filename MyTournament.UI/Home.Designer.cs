@@ -34,6 +34,8 @@
             this.btnViewMembers = new System.Windows.Forms.Button();
             this.btnTry = new System.Windows.Forms.Button();
             this.btnAddMembers = new System.Windows.Forms.Button();
+            this.lblNumberOfMembers = new System.Windows.Forms.Label();
+            this.lblNumberOfTeams = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -41,7 +43,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(388, 104);
+            this.lblWelcome.Location = new System.Drawing.Point(255, 116);
             this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(488, 36);
@@ -52,7 +54,7 @@
             // btnViewTeams
             // 
             this.btnViewTeams.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewTeams.Location = new System.Drawing.Point(381, 223);
+            this.btnViewTeams.Location = new System.Drawing.Point(248, 235);
             this.btnViewTeams.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewTeams.Name = "btnViewTeams";
             this.btnViewTeams.Size = new System.Drawing.Size(184, 46);
@@ -64,18 +66,17 @@
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(561, 433);
+            this.lblMessage.Location = new System.Drawing.Point(428, 445);
             this.lblMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(117, 17);
             this.lblMessage.TabIndex = 2;
             this.lblMessage.Text = "here is your label";
-            this.lblMessage.Click += new System.EventHandler(this.LblMessage_Click);
             // 
             // btnViewMembers
             // 
             this.btnViewMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewMembers.Location = new System.Drawing.Point(692, 223);
+            this.btnViewMembers.Location = new System.Drawing.Point(559, 235);
             this.btnViewMembers.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewMembers.Name = "btnViewMembers";
             this.btnViewMembers.Size = new System.Drawing.Size(184, 46);
@@ -87,7 +88,7 @@
             // btnTry
             // 
             this.btnTry.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnTry.Location = new System.Drawing.Point(381, 334);
+            this.btnTry.Location = new System.Drawing.Point(248, 346);
             this.btnTry.Name = "btnTry";
             this.btnTry.Size = new System.Drawing.Size(184, 47);
             this.btnTry.TabIndex = 4;
@@ -98,7 +99,7 @@
             // btnAddMembers
             // 
             this.btnAddMembers.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAddMembers.Location = new System.Drawing.Point(692, 334);
+            this.btnAddMembers.Location = new System.Drawing.Point(559, 346);
             this.btnAddMembers.Name = "btnAddMembers";
             this.btnAddMembers.Size = new System.Drawing.Size(184, 47);
             this.btnAddMembers.TabIndex = 5;
@@ -106,11 +107,32 @@
             this.btnAddMembers.UseVisualStyleBackColor = false;
             this.btnAddMembers.Click += new System.EventHandler(this.BtnAddMembers_Click);
             // 
+            // lblNumberOfMembers
+            // 
+            this.lblNumberOfMembers.AutoSize = true;
+            this.lblNumberOfMembers.Location = new System.Drawing.Point(570, 288);
+            this.lblNumberOfMembers.Name = "lblNumberOfMembers";
+            this.lblNumberOfMembers.Size = new System.Drawing.Size(139, 17);
+            this.lblNumberOfMembers.TabIndex = 6;
+            this.lblNumberOfMembers.Text = "Number Of Members";
+            this.lblNumberOfMembers.Click += new System.EventHandler(this.NumberOfMembers_Click);
+            // 
+            // lblNumberOfTeams
+            // 
+            this.lblNumberOfTeams.AutoSize = true;
+            this.lblNumberOfTeams.Location = new System.Drawing.Point(258, 288);
+            this.lblNumberOfTeams.Name = "lblNumberOfTeams";
+            this.lblNumberOfTeams.Size = new System.Drawing.Size(124, 17);
+            this.lblNumberOfTeams.TabIndex = 7;
+            this.lblNumberOfTeams.Text = "Number Of Teams";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1014, 554);
+            this.Controls.Add(this.lblNumberOfTeams);
+            this.Controls.Add(this.lblNumberOfMembers);
             this.Controls.Add(this.btnAddMembers);
             this.Controls.Add(this.btnTry);
             this.Controls.Add(this.btnViewMembers);
@@ -134,5 +156,7 @@
         private System.Windows.Forms.Button btnViewMembers;
         private System.Windows.Forms.Button btnTry;
         private System.Windows.Forms.Button btnAddMembers;
+        private System.Windows.Forms.Label lblNumberOfMembers;
+        private System.Windows.Forms.Label lblNumberOfTeams;
     }
 }

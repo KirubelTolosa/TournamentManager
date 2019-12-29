@@ -81,6 +81,11 @@ namespace MyTournament.UI
             frmAddTeam.Show();
         }
 
-      
+        private void ListViewTeams_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
