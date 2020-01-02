@@ -39,6 +39,7 @@
             this.txtposition = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtteam_IdDrop = new System.Windows.Forms.ComboBox();
+            this.lblActionStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSubmit
@@ -59,7 +60,6 @@
             this.member_Id.Size = new System.Drawing.Size(19, 17);
             this.member_Id.TabIndex = 1;
             this.member_Id.Text = "Id";
-            
             // 
             // memberName
             // 
@@ -110,7 +110,6 @@
             this.team_Id.Size = new System.Drawing.Size(58, 17);
             this.team_Id.TabIndex = 8;
             this.team_Id.Text = "team_Id";
-            
             // 
             // txtposition
             // 
@@ -118,7 +117,6 @@
             this.txtposition.Name = "txtposition";
             this.txtposition.Size = new System.Drawing.Size(166, 22);
             this.txtposition.TabIndex = 11;
-            
             // 
             // label2
             // 
@@ -128,7 +126,6 @@
             this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "Position";
-            
             // 
             // txtteam_IdDrop
             // 
@@ -137,13 +134,22 @@
             this.txtteam_IdDrop.Name = "txtteam_IdDrop";
             this.txtteam_IdDrop.Size = new System.Drawing.Size(166, 24);
             this.txtteam_IdDrop.TabIndex = 12;
-            
+            // 
+            // lblActionStatus
+            // 
+            this.lblActionStatus.AutoSize = true;
+            this.lblActionStatus.Location = new System.Drawing.Point(41, 331);
+            this.lblActionStatus.Name = "lblActionStatus";
+            this.lblActionStatus.Size = new System.Drawing.Size(46, 17);
+            this.lblActionStatus.TabIndex = 13;
+            this.lblActionStatus.Text = "label3";
             // 
             // AddMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(329, 406);
+            this.Controls.Add(this.lblActionStatus);
             this.Controls.Add(this.txtteam_IdDrop);
             this.Controls.Add(this.txtposition);
             this.Controls.Add(this.label2);
@@ -157,7 +163,6 @@
             this.Controls.Add(this.btnSubmit);
             this.Name = "AddMember";
             this.Text = "AddMember";
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +181,6 @@
         private System.Windows.Forms.TextBox txtposition;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox txtteam_IdDrop;
+        private System.Windows.Forms.Label lblActionStatus;
     }
 }

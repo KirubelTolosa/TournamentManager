@@ -11,6 +11,7 @@ namespace MyTournament.BLL
 {
    public class MemberBLService
     {
+        public static bool errorOccured = false;
         public static List<MemberBLDto> GetAllMembers()
         {
 
@@ -32,11 +33,15 @@ namespace MyTournament.BLL
 
             return blDtos;
         }
- 
+        
         public static void AddMember(String member_Id, String memberName, String position, String team_Id)
         {
-            
+          
             MemberDataRepository.AddMember(member_Id, memberName, position, team_Id);
+            if (MemberDataRepository.errorOccured == true)
+            {
+                errorOccured = true;
+            }
         }
 
         public static void AddMember(MemberBLDto memberBLDto)

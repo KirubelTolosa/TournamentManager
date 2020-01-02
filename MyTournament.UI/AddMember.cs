@@ -40,7 +40,8 @@ namespace MyTournament.UI
                 var selectedId = txtteam_IdDrop.SelectedItem;
                 var model = new MemberBLDto(this.txtmember_Id.Text, this.txtmemberName.Text, this.txtposition.Text, selectedId.ToString());
                 MemberBLService.AddMember(model);
-
+                
+                
                 
 
 

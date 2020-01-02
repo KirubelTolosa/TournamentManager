@@ -10,6 +10,7 @@ namespace MyTournament.DAL
 {
     public class MemberDataRepository
     {
+        public static bool errorOccured = false;
         public static List<MemberDADto> GetAllMembers()
         {
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=KIRUBELTOLOSA\SQLEXPRESS;Initial Catalog=tournament;Integrated Security=SSPI");
@@ -92,7 +93,7 @@ namespace MyTournament.DAL
             }
         }
 
-        public static int CountMembers()
+       public static int CountMembers()
         {
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=KIRUBELTOLOSA\SQLEXPRESS;Initial Catalog=tournament;Integrated Security=SSPI");
             SqlCommand sqlCommand = new SqlCommand("SELECT COUNT(*) FROM MEMBER", sqlConnection);

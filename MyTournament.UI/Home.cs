@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,24 +17,32 @@ namespace MyTournament.UI
     {
         public Home()
         {
+            try
+            { 
             InitializeComponent();
             var countMembers = MemberBLService.CountMembers();
             lblNumberOfMembers.Text = countMembers + "  Members in Tournament!";
             var teamcount = TeamBLService.CountTeams();
             lblNumberOfTeams.Text = teamcount + "  teams in Tournament!";
+            }
+            catch (SqlException ex)
+            {
+                lblErrorMessage.ForeColor = Color.Red;                
+                lblErrorMessage.Text = "Error occured!!";
+            }
         }
 
         
         private void btnViewTeams_Click(object sender, EventArgs e)
         {
-            lblMessage.Text = " you clicked View teams!";
+            lblErrorMessage.Text = " you clicked View teams!";
             frmViewTeams frmViewTeams = new frmViewTeams();
             frmViewTeams.Show();
         }
 
         private void btnViewMembers_Click(object sender, EventArgs e)
         {
-            lblMessage.Text = " you clicked View members!";
+            lblErrorMessage.Text = " you clicked View members!";
             var frmAddMembers = new ViewMembers();
             frmAddMembers.Show(); 
         }
@@ -45,7 +54,7 @@ namespace MyTournament.UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            lblMessage.Text = "You selected to add team";
+            lblErrorMessage.Text = "You selected to add team";
             var frmAddTeam = new AddTeam();
             frmAddTeam.Show(); 
         }

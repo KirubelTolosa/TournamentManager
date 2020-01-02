@@ -30,7 +30,7 @@
         {
             this.lblWelcome = new System.Windows.Forms.Label();
             this.btnViewTeams = new System.Windows.Forms.Button();
-            this.lblMessage = new System.Windows.Forms.Label();
+            this.lblErrorMessage = new System.Windows.Forms.Label();
             this.btnViewMembers = new System.Windows.Forms.Button();
             this.btnTry = new System.Windows.Forms.Button();
             this.btnAddMembers = new System.Windows.Forms.Button();
@@ -63,15 +63,15 @@
             this.btnViewTeams.UseVisualStyleBackColor = true;
             this.btnViewTeams.Click += new System.EventHandler(this.btnViewTeams_Click);
             // 
-            // lblMessage
+            // lblErrorMessage
             // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(428, 445);
-            this.lblMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(117, 17);
-            this.lblMessage.TabIndex = 2;
-            this.lblMessage.Text = "here is your label";
+            this.lblErrorMessage.AutoSize = true;
+            this.lblErrorMessage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblErrorMessage.Location = new System.Drawing.Point(434, 441);
+            this.lblErrorMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblErrorMessage.Name = "lblErrorMessage";
+            this.lblErrorMessage.Size = new System.Drawing.Size(0, 17);
+            this.lblErrorMessage.TabIndex = 2;
             // 
             // btnViewMembers
             // 
@@ -136,7 +136,7 @@
             this.Controls.Add(this.btnAddMembers);
             this.Controls.Add(this.btnTry);
             this.Controls.Add(this.btnViewMembers);
-            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.btnViewTeams);
             this.Controls.Add(this.lblWelcome);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -152,7 +152,7 @@
 
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnViewTeams;
-        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Label lblErrorMessage;
         private System.Windows.Forms.Button btnViewMembers;
         private System.Windows.Forms.Button btnTry;
         private System.Windows.Forms.Button btnAddMembers;
