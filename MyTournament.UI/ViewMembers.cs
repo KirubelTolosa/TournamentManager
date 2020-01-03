@@ -47,8 +47,8 @@ namespace MyTournament.UI
 
         private void LoadMembers()
         {
-            
-            var memberDADtos = MemberBLService.GetAllMembers();
+            var blServices = new MemberBLService();
+            var memberDADtos = blServices.GetAllMembers();
             List<Member> Members = new List<Member>();
             foreach(var blDto in memberDADtos)
             {

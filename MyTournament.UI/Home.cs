@@ -27,16 +27,26 @@ namespace MyTournament.UI
             }
             catch (SqlException ex)
             {
-                lblErrorMessage.ForeColor = Color.Red;                
-                lblErrorMessage.Text = "Error occured!!";
+
+                throw ex;
             }
+            catch (Exception)
+            {
+                lblErrorMessage.ForeColor = Color.Red;
+                lblErrorMessage.Text = "ERROR OCCURED!!";
+               
+            }
+            finally
+            {
+                
+            }            
         }
 
         
         private void btnViewTeams_Click(object sender, EventArgs e)
         {
             lblErrorMessage.Text = " you clicked View teams!";
-            frmViewTeams frmViewTeams = new frmViewTeams();
+            ViewTeams frmViewTeams = new ViewTeams();
             frmViewTeams.Show();
         }
 

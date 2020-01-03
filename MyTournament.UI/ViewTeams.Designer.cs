@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace MyTournament.UI
 {
-    partial class frmViewTeams
+    partial class ViewTeams
     {
         /// <summary>
         /// Required designer variable.
@@ -33,17 +33,18 @@ namespace MyTournament.UI
         {
             this.btnAddTeam = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.listViewTeams = new System.Windows.Forms.ListView();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.gridViewTeams = new System.Windows.Forms.DataGridView();
             this.clmnTeamName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnTeamID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDeleteTeam = new System.Windows.Forms.Button();
+            this.lblDeletedTeamStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTeams)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddTeam
             // 
-            this.btnAddTeam.Location = new System.Drawing.Point(784, 71);
+            this.btnAddTeam.Location = new System.Drawing.Point(576, 47);
             this.btnAddTeam.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddTeam.Name = "btnAddTeam";
             this.btnAddTeam.Size = new System.Drawing.Size(100, 28);
@@ -61,20 +62,9 @@ namespace MyTournament.UI
             this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 1;
             // 
-            // listViewTeams
-            // 
-            this.listViewTeams.HideSelection = false;
-            this.listViewTeams.Location = new System.Drawing.Point(124, 158);
-            this.listViewTeams.Margin = new System.Windows.Forms.Padding(4);
-            this.listViewTeams.Name = "listViewTeams";
-            this.listViewTeams.Size = new System.Drawing.Size(249, 381);
-            this.listViewTeams.TabIndex = 2;
-            this.listViewTeams.UseCompatibleStateImageBehavior = false;
-            
-            // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(136, 54);
+            this.btnRefresh.Location = new System.Drawing.Point(47, 47);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(100, 28);
@@ -89,7 +79,7 @@ namespace MyTournament.UI
             this.gridViewTeams.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmnTeamName,
             this.clmnTeamID});
-            this.gridViewTeams.Location = new System.Drawing.Point(421, 158);
+            this.gridViewTeams.Location = new System.Drawing.Point(47, 98);
             this.gridViewTeams.Margin = new System.Windows.Forms.Padding(4);
             this.gridViewTeams.Name = "gridViewTeams";
             this.gridViewTeams.RowHeadersWidth = 51;
@@ -115,18 +105,38 @@ namespace MyTournament.UI
             this.clmnTeamID.Visible = false;
             this.clmnTeamID.Width = 125;
             // 
-            // frmViewTeams
+            // btnDeleteTeam
+            // 
+            this.btnDeleteTeam.Location = new System.Drawing.Point(576, 441);
+            this.btnDeleteTeam.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteTeam.Name = "btnDeleteTeam";
+            this.btnDeleteTeam.Size = new System.Drawing.Size(100, 28);
+            this.btnDeleteTeam.TabIndex = 5;
+            this.btnDeleteTeam.Text = "Delete Team";
+            this.btnDeleteTeam.UseVisualStyleBackColor = true;
+            this.btnDeleteTeam.Click += new System.EventHandler(this.BtnDeleteTeam_Click);
+            // 
+            // lblDeletedTeamStatus
+            // 
+            this.lblDeletedTeamStatus.AutoSize = true;
+            this.lblDeletedTeamStatus.Location = new System.Drawing.Point(45, 435);
+            this.lblDeletedTeamStatus.Name = "lblDeletedTeamStatus";
+            this.lblDeletedTeamStatus.Size = new System.Drawing.Size(0, 21);
+            this.lblDeletedTeamStatus.TabIndex = 6;
+            // 
+            // ViewTeams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(714, 491);
+            this.Controls.Add(this.lblDeletedTeamStatus);
+            this.Controls.Add(this.btnDeleteTeam);
             this.Controls.Add(this.gridViewTeams);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.listViewTeams);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddTeam);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmViewTeams";
+            this.Name = "ViewTeams";
             this.Text = "View Teams";
             this.Load += new System.EventHandler(this.ViewTeams_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTeams)).EndInit();
@@ -144,10 +154,11 @@ namespace MyTournament.UI
 
         private System.Windows.Forms.Button btnAddTeam;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listViewTeams;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridView gridViewTeams;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnTeamName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnTeamID;
+        private Button btnDeleteTeam;
+        private Label lblDeletedTeamStatus;
     }
 }

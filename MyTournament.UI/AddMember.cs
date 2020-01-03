@@ -17,7 +17,8 @@ namespace MyTournament.UI
         public AddMember()
         {
             InitializeComponent();
-            var teamIds = TeamBLService.GetTeamIds();
+            TeamBLService team = new TeamBLService();
+            var teamIds = team.GetTeamIds();
             
             // 1st attempt = setting data source to dropdown             
             // txtteam_IdDrop.DataSource = teamIds;
@@ -34,14 +35,14 @@ namespace MyTournament.UI
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-
+            try
+            {           
             if (this.txtmember_Id.Text != "" && this.txtmember_Id.Text != null)
                 {
-                var selectedId = txtteam_IdDrop.SelectedItem;
-                var model = new MemberBLDto(this.txtmember_Id.Text, this.txtmemberName.Text, this.txtposition.Text, selectedId.ToString());
-                MemberBLService.AddMember(model);
-                
-                
+                    var selectedId = txtteam_IdDrop.SelectedItem;
+                    var model = new MemberBLDto(this.txtmember_Id.Text, this.txtmemberName.Text, this.txtposition.Text, selectedId.ToString());
+                    var blService = new MemberBLService();
+                    blService.AddMember(model); 
                 
 
 
@@ -55,6 +56,13 @@ namespace MyTournament.UI
                 lblNumberOfMembers.ForeColor = Color.Red;
                 lblNumberOfMembers.Text = "You Entered an Invalid value for ID!";
                 }
+            }
+            catch (MemberBLService.AddMemberException ex)
+            {
+                lblActionStatus.Text = "Team is Full!!";
+                throw ex;
+            }
+            
         }
 
        

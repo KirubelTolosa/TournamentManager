@@ -12,11 +12,13 @@ using System.Windows.Forms;
 
 namespace MyTournament.UI
 {
-    public partial class frmViewTeams : Form
+    public partial class ViewTeams : Form
     {
-        public frmViewTeams()
+      
+        public ViewTeams()
         {
             InitializeComponent();
+            
         }
 
         private void ViewTeams_Load(object sender, EventArgs e)
@@ -34,7 +36,8 @@ namespace MyTournament.UI
         {
 
             //call the business logic service 
-            var teamBlDtos = TeamBLService.GetAllTeams();
+            TeamBLService item = new TeamBLService();
+            var teamBlDtos = item.GetAllTeams();
 
             List<Team> teams = new List<Team>();
             foreach(var blDto in teamBlDtos)
@@ -47,13 +50,13 @@ namespace MyTournament.UI
 
 
             //load it to listViews
-            listViewTeams.Items.Clear();
+            /*listViewTeams.Items.Clear();
             foreach (var curr in teams)
             {
                 listViewTeams.Items.Add(curr.Id + "-" + curr.Name);
             }
 
-            //Grid view binding option 1
+            //Grid view binding option 1*/
             //load it to the grid view
 
             var dt = new DataTable();
@@ -69,9 +72,10 @@ namespace MyTournament.UI
             }
 
             gridViewTeams.DataSource = dt;
-            
-            //Grid view binding option 2
 
+            
+
+           
        
         }
 
@@ -79,8 +83,28 @@ namespace MyTournament.UI
         {
             var frmAddTeam = new AddTeam();
             frmAddTeam.Show();
-        }    
+        }
 
         
+        private void BtnDeleteTeam_Click(object sender, EventArgs e)
+        {
+           string team_Id = gridViewTeams.SelectedCells[0].Value.ToString();  
+           try
+            {
+                TeamBLService team = new TeamBLService();
+
+                team.DeleteTeam(team_Id);
+
+            }
+            catch (TeamBLService.DeleteTeamException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                lblDeletedTeamStatus.Text = "You deleted a team";
+            }
+           
+        }        
     }
 }

@@ -140,9 +140,8 @@
             this.lblActionStatus.AutoSize = true;
             this.lblActionStatus.Location = new System.Drawing.Point(41, 331);
             this.lblActionStatus.Name = "lblActionStatus";
-            this.lblActionStatus.Size = new System.Drawing.Size(46, 17);
+            this.lblActionStatus.Size = new System.Drawing.Size(0, 21);
             this.lblActionStatus.TabIndex = 13;
-            this.lblActionStatus.Text = "label3";
             // 
             // AddMember
             // 

@@ -141,5 +141,16 @@ namespace MyTournament.DAL
             return teamIds;
 
         }
+        public static void DeleteTeam(string teamId)
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Data Source=KIRUBELTOLOSA\SQLEXPRESS;Initial Catalog=tournament;Integrated Security=SSPI");
+            SqlCommand sqlCommand = new SqlCommand("DELETE FROM TEAM WHERE TEAM_ID = @tId", sqlConnection);
+            SqlParameter tId = new SqlParameter("tId", System.Data.SqlDbType.NVarChar);
+            tId.Value = teamId;
+            sqlCommand.Parameters.Add(tId);
+            sqlConnection.Open();
+            sqlCommand.ExecuteNonQuery();           
+            sqlConnection.Close();
+        }        
     }
 }

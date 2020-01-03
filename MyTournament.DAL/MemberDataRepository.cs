@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyTournament.DAL
 {
-    public class MemberDataRepository
+    public class MemberDataRepository 
     {
         public static bool errorOccured = false;
         public static List<MemberDADto> GetAllMembers()
@@ -116,6 +116,35 @@ namespace MyTournament.DAL
                 sqlConnection.Close();
             }
             return memberCount;
+
+        }
+
+        public static int CountMembersInTeam(string Team_Id)
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Data Source=KIRUBELTOLOSA\SQLEXPRESS;Initial Catalog=tournament;Integrated Security=SSPI");
+            SqlCommand sqlCommand = new SqlCommand("SELECT COUNT(*) FROM MEMBER WHERE Team_ID = @tID", sqlConnection);
+            SqlParameter tId = new SqlParameter("tID", System.Data.SqlDbType.NVarChar);
+            tId.Value = Team_Id;
+            int teamMemberCount;
+            sqlCommand.Parameters.Add(tId);
+            try
+            {
+                sqlConnection.Open();
+                teamMemberCount = (Int32)sqlCommand.ExecuteScalar();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return teamMemberCount;
 
         }
     }
