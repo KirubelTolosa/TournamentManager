@@ -1,4 +1,4 @@
-﻿using MyTournament.BLL;
+using MyTournament.BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,14 +15,17 @@ namespace MyTournament.UI
 {
     public partial class Home : Form
     {
+        public IMemberBLService memberBLService = new MemberBLService();
+        public ITeamBLService teamBLService = new TeamBLService();
+
         public Home()
         {
             try
             { 
             InitializeComponent();
-            var countMembers = MemberBLService.CountMembers();
+            var countMembers = this.memberBLService.CountMembers();
             lblNumberOfMembers.Text = countMembers + "  Members in Tournament!";
-            var teamcount = TeamBLService.CountTeams();
+            var teamcount = this.teamBLService.CountTeams();
             lblNumberOfTeams.Text = teamcount + "  teams in Tournament!";
             }
             catch (SqlException ex)

@@ -1,4 +1,4 @@
-﻿using MyTournament.DAL.DataModel;
+using MyTournament.DAL.DataModel;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace MyTournament.DAL
 {
-    public class MemberDataRepository 
-    {
-        public static bool errorOccured = false;
-        public static List<MemberDADto> GetAllMembers()
+    public class MemberDataRepository : IMemberDataRepository
+    {  
+        public List<MemberDADto> GetAllMembers()
         {
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=KIRUBELTOLOSA\SQLEXPRESS;Initial Catalog=tournament;Integrated Security=SSPI");
             SqlCommand sqlCommand = new SqlCommand("select Member_ID, MemberName, Position, Team_Id from Member", sqlConnection);
@@ -47,12 +46,12 @@ namespace MyTournament.DAL
 
         }
 
-        public static void AddMember(MemberDADto memberDADto)
+        public void AddMember(MemberDADto memberDADto)
         {
             AddMember(memberDADto.Id, memberDADto.Name, memberDADto.Position, memberDADto.Team_ID);
         }
 
-        public static void AddMember(string member_Id, string memberName, string position, string team_Id)
+        public void AddMember(string member_Id, string memberName, string position, string team_Id)
         {
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=KIRUBELTOLOSA\SQLEXPRESS;Initial Catalog=tournament;Integrated Security=SSPI");
 
@@ -93,7 +92,7 @@ namespace MyTournament.DAL
             }
         }
 
-       public static int CountMembers()
+        public int CountMembers()
         {
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=KIRUBELTOLOSA\SQLEXPRESS;Initial Catalog=tournament;Integrated Security=SSPI");
             SqlCommand sqlCommand = new SqlCommand("SELECT COUNT(*) FROM MEMBER", sqlConnection);
@@ -119,7 +118,7 @@ namespace MyTournament.DAL
 
         }
 
-        public static int CountMembersInTeam(string Team_Id)
+        public int CountMembersInTeam(string Team_Id)
         {
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=KIRUBELTOLOSA\SQLEXPRESS;Initial Catalog=tournament;Integrated Security=SSPI");
             SqlCommand sqlCommand = new SqlCommand("SELECT COUNT(*) FROM MEMBER WHERE Team_ID = @tID", sqlConnection);

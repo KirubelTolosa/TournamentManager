@@ -1,4 +1,4 @@
-﻿using MyTournament.BLL;
+using MyTournament.BLL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -61,6 +61,7 @@ namespace MyTournament.UI
                 });
             }
 
+
            /* listViewMembers.Items.Clear();
             foreach (var current in Members)
             {
@@ -75,15 +76,15 @@ namespace MyTournament.UI
 
             foreach (var member in Members)
             {
-                var row = dt.NewRow();
-                row["Member_ID"] = member.Id;
-                row["MemberName"] = member.Name;
-                row["Position"] = member.Position;
-                row["Team_ID"] = member.Team_ID;
-                dt.Rows.Add(row);
+              var row = dt.NewRow();
+              row["Member_ID"] = member.Id;
+              row["MemberName"] = member.Name;
+              row["Position"] = member.Position;
+              row["Team_ID"] = member.Team_ID;
+              dt.Rows.Add(row);
             }
-            
-            gridViewMembers.DataSource = dt;
+
+      gridViewMembers.DataSource = dt;
         }
 
         private void GridViewMembers_CellContentClick(object sender, DataGridViewCellEventArgs e)

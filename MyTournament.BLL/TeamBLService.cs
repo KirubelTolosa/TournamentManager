@@ -1,4 +1,4 @@
-﻿using MyTournament.BLL.DataModel;
+using MyTournament.BLL.DataModel;
 using MyTournament.DAL;
 using MyTournament.DAL.DataModel;
 using System;
@@ -6,15 +6,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyTournament.BLL.DataModel.Exceptions;
 
 namespace MyTournament.BLL
 {
-    public class TeamBLService : ITeamServices
+    public class TeamBLService : ITeamBLService
     {
+        private ITeamDataRepository teamDataRepository;
+
+        public TeamBLService()
+        {
+            this.teamDataRepository = new TeamDataRepository();
+        }
+        public TeamBLService(ITeamDataRepository teamDataRepository)
+        {
+             this.teamDataRepository = teamDataRepository;
+        }
         public List<TeamBLDto> GetAllTeams()
         {
 
-            List<TeamDADto> daDtos = TeamDataRepository.GetAllTeams();
+            List<TeamDADto> daDtos = teamDataRepository.GetAllTeams();
 
             List<TeamBLDto> blDtos = new List<TeamBLDto>();
 
@@ -34,25 +45,25 @@ namespace MyTournament.BLL
 
         public void AddTeam(String teamId, String teamName)
         {
-            var countTeams = TeamDataRepository.CountTeams();
+            var countTeams = teamDataRepository.CountTeams();
             if (countTeams < 9)
             {
-                TeamDataRepository.AddTeam(teamId, teamName);
+                teamDataRepository.AddTeam(teamId, teamName);
             }
             else
             {
                 throw new AddTeamException("The tournament is full. Delete a team or create a new tournamet!!");
             }
         }
-        public static int CountTeams()
+        public int CountTeams()
         {
-            var teamcount = TeamDataRepository.CountTeams();
+            var teamcount = teamDataRepository.CountTeams();
             return teamcount;
         }
 
         public List<string> GetTeamIds()
         {
-            var teamIds = TeamDataRepository.GetTeamIds();
+            var teamIds = teamDataRepository.GetTeamIds();
             return teamIds;
         }
 
@@ -60,7 +71,7 @@ namespace MyTournament.BLL
         {
             try
             {
-                TeamDataRepository.DeleteTeam(team_Id);
+                teamDataRepository.DeleteTeam(team_Id);
             }
             catch
             {
@@ -68,18 +79,6 @@ namespace MyTournament.BLL
             }
         }
 
-        public class AddTeamException : Exception
-        {
-            public AddTeamException(string custommessage) : base(custommessage)
-            {
-            }
-        }
-        public class DeleteTeamException : Exception
-        {
-            public DeleteTeamException(string message)
-               : base(message)
-            {
-            }
-        }
+       
     }
 }

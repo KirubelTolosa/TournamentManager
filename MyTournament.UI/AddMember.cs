@@ -1,4 +1,4 @@
-﻿using MyTournament.BLL;
+using MyTournament.BLL;
 using MyTournament.BLL.DataModel;
 using System;
 using System.Collections.Generic;
@@ -9,16 +9,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Autofac;
+using MyTournament.BLL.DataModel.Exceptions;
 
 namespace MyTournament.UI
 {
     public partial class AddMember : Form
     {
-        public AddMember()
+
+    private ITeamBLService teamBLService = new TeamBLService();
+
+     public AddMember()
         {
             InitializeComponent();
-            TeamBLService team = new TeamBLService();
-            var teamIds = team.GetTeamIds();
+            var teamIds = teamBLService.GetTeamIds();
             
             // 1st attempt = setting data source to dropdown             
             // txtteam_IdDrop.DataSource = teamIds;
@@ -30,6 +34,12 @@ namespace MyTournament.UI
                 txtteam_IdDrop.Items.Add(id);
             }
         }
+
+    public AddMember(ITeamBLService teamBLService) : this()
+    {
+      this.teamBLService = teamBLService;
+    }
+    
 
 
 
@@ -57,7 +67,7 @@ namespace MyTournament.UI
                 lblNumberOfMembers.Text = "You Entered an Invalid value for ID!";
                 }
             }
-            catch (MemberBLService.AddMemberException ex)
+            catch (AddMemberException ex)
             {
                 lblActionStatus.Text = "Team is Full!!";
                 throw ex;

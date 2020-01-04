@@ -1,5 +1,6 @@
-﻿using MyTournament.BLL;
+using MyTournament.BLL;
 using MyTournament.BLL.DataModel;
+using MyTournament.BLL.DataModel.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,40 +36,41 @@ namespace MyTournament.UI
         private void LoadTeams()
         {
 
-            //call the business logic service 
-            TeamBLService item = new TeamBLService();
-            var teamBlDtos = item.GetAllTeams();
+      //call the business logic service 
+        TeamBLService item = new TeamBLService();
+        var teamBlDtos = item.GetAllTeams();
 
-            List<Team> teams = new List<Team>();
-            foreach(var blDto in teamBlDtos)
-            {
-                teams.Add(new Team()
-                {
-                    Id = blDto.Id, Name = blDto.Name
-                });
-            }
+        List<Team> teams = new List<Team>();
+        foreach (var blDto in teamBlDtos)
+        {
+          teams.Add(new Team()
+          {
+            Id = blDto.Id,
+            Name = blDto.Name
+          });
+        }
 
 
-            //load it to listViews
-            /*listViewTeams.Items.Clear();
-            foreach (var curr in teams)
-            {
-                listViewTeams.Items.Add(curr.Id + "-" + curr.Name);
-            }
+      //load it to listViews
+      /*listViewTeams.Items.Clear();
+      foreach (var curr in teams)
+      {
+          listViewTeams.Items.Add(curr.Id + "-" + curr.Name);
+      }
 
-            //Grid view binding option 1*/
-            //load it to the grid view
+      //Grid view binding option 1*/
+      //load it to the grid view
 
-            var dt = new DataTable();
+      var dt = new DataTable();
            dt.Columns.Add(new DataColumn("Team Id", typeof(int)));
            dt.Columns.Add(new DataColumn("Team Name", typeof(string)));
 
-            foreach(Team team in teams)
+            foreach (Team team in teams)
             {
-                var row = dt.NewRow();
-                row["Team Name"] = team.Name;
-                row["Team Id"] = team.Id;
-                dt.Rows.Add(row);
+              var row = dt.NewRow();
+              row["Team Name"] = team.Name;
+              row["Team Id"] = team.Id;
+              dt.Rows.Add(row);
             }
 
             gridViewTeams.DataSource = dt;
@@ -91,12 +93,12 @@ namespace MyTournament.UI
            string team_Id = gridViewTeams.SelectedCells[0].Value.ToString();  
            try
             {
-                TeamBLService team = new TeamBLService();
+               // TeamBLService team = new TeamBLService();
 
-                team.DeleteTeam(team_Id);
+               // team.DeleteTeam(team_Id);
 
             }
-            catch (TeamBLService.DeleteTeamException ex)
+            catch (DeleteTeamException ex)
             {
                 throw ex;
             }

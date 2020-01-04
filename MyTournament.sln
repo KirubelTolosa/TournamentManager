@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTournament.BLL", "MyTourn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTournament.DAL", "MyTournament.DAL\MyTournament.DAL.csproj", "{0BE82B07-60D9-4A22-8CC8-50C7B3467168}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tournament.Web.API", "Tournament.Web.API\Tournament.Web.API.csproj", "{1CFBB4C7-87E1-42A1-89E0-5FF93AD07414}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0BE82B07-60D9-4A22-8CC8-50C7B3467168}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BE82B07-60D9-4A22-8CC8-50C7B3467168}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BE82B07-60D9-4A22-8CC8-50C7B3467168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CFBB4C7-87E1-42A1-89E0-5FF93AD07414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CFBB4C7-87E1-42A1-89E0-5FF93AD07414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CFBB4C7-87E1-42A1-89E0-5FF93AD07414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CFBB4C7-87E1-42A1-89E0-5FF93AD07414}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

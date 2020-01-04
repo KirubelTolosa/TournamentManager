@@ -1,4 +1,4 @@
-﻿using MyTournament.DAL.DataModel;
+using MyTournament.DAL.DataModel;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace MyTournament.DAL
 {
-    public class TeamDataRepository
+    public class TeamDataRepository : ITeamDataRepository
     {
-        public static void AddTeam(string teamId, string teamName)
+        public void AddTeam(string teamId, string teamName)
         {
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=KIRUBELTOLOSA\SQLEXPRESS;Initial Catalog=tournament;Integrated Security=SSPI");
 
@@ -50,7 +50,7 @@ namespace MyTournament.DAL
             throw new NotImplementedException();
         }*/
 
-        public static List<TeamDADto> GetAllTeams()
+        public List<TeamDADto> GetAllTeams()
         {
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=KIRUBELTOLOSA\SQLEXPRESS;Initial Catalog=tournament;Integrated Security=SSPI");
             SqlCommand sqlCommand = new SqlCommand("select Team_ID, TeamName from team", sqlConnection);
@@ -83,7 +83,7 @@ namespace MyTournament.DAL
 
         }
 
-        public static int CountTeams()
+        public int CountTeams()
         {
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=KIRUBELTOLOSA\SQLEXPRESS;Initial Catalog=tournament;Integrated Security=SSPI");
             SqlCommand sqlCommand = new SqlCommand("SELECT COUNT(*) FROM TEAM", sqlConnection);
@@ -109,7 +109,7 @@ namespace MyTournament.DAL
 
         }
 
-        public static List<string> GetTeamIds()
+        public List<string> GetTeamIds()
         {
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=KIRUBELTOLOSA\SQLEXPRESS;Initial Catalog=tournament;Integrated Security=SSPI");
             SqlCommand sqlCommand = new SqlCommand("select team.team_ID from team", sqlConnection);
@@ -141,7 +141,7 @@ namespace MyTournament.DAL
             return teamIds;
 
         }
-        public static void DeleteTeam(string teamId)
+        public void DeleteTeam(string teamId)
         {
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=KIRUBELTOLOSA\SQLEXPRESS;Initial Catalog=tournament;Integrated Security=SSPI");
             SqlCommand sqlCommand = new SqlCommand("DELETE FROM TEAM WHERE TEAM_ID = @tId", sqlConnection);

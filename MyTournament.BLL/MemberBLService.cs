@@ -1,4 +1,5 @@
-﻿using MyTournament.BLL.DataModel;
+using MyTournament.BLL.DataModel;
+using MyTournament.BLL.DataModel.Exceptions;
 using MyTournament.DAL;
 using MyTournament.DAL.DataModel;
 using System;
@@ -9,13 +10,22 @@ using System.Threading.Tasks;
 
 namespace MyTournament.BLL
 {
-   public class MemberBLService : IMemberServices
-    {
-        public static bool errorOccured = false;
+  
+   public class MemberBLService : IMemberBLService
+   {
+        private IMemberDataRepository memberDataRepository;
+
+        public MemberBLService()
+        {
+              memberDataRepository = new MemberDataRepository();
+        }
+        public MemberBLService(IMemberDataRepository memberDataRepository)
+        {
+            this.memberDataRepository = memberDataRepository;
+        }
         public List<MemberBLDto> GetAllMembers()
         {
-
-            List<MemberDADto> daDtos = MemberDataRepository.GetAllMembers();
+            List<MemberDADto> daDtos = memberDataRepository.GetAllMembers();
 
             List<MemberBLDto> blDtos = new List<MemberBLDto>();
 
@@ -40,7 +50,7 @@ namespace MyTournament.BLL
 
             if (countOfMembers < 6)
             {
-                MemberDataRepository.AddMember(member_Id, memberName, position, team_Id);
+                memberDataRepository.AddMember(member_Id, memberName, position, team_Id);
             }
             else
             {                
@@ -59,29 +69,23 @@ namespace MyTournament.BLL
 
             if (countOfMembers < 6)
             {
-                MemberDataRepository.AddMember(memberDADto);
+                memberDataRepository.AddMember(memberDADto);
             }
             else
             {
                 throw new AddMemberException(string.Format("The team with team ID {0} is already full!", memberDADto.Team_ID));
             }
         }
-        public static int CountMembers()
+        public int CountMembers()
         {
-            var count = MemberDataRepository.CountMembers();
+            var count = memberDataRepository.CountMembers();
             return count;
         }
-        public static int CountMembersInTeam(string team_Id)
+        private int CountMembersInTeam(string team_Id)
         {
-            var count = MemberDataRepository.CountMembersInTeam(team_Id);
+            var count = memberDataRepository.CountMembersInTeam(team_Id);
             return count;
         }
-        public class AddMemberException : Exception
-        {
-            public AddMemberException(string message)
-               : base(message)
-            {
-            }
-        }
+       
     }
 }

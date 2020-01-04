@@ -1,4 +1,5 @@
-﻿using MyTournament.BLL;
+using MyTournament.BLL;
+using MyTournament.BLL.DataModel.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,7 @@ namespace MyTournament.UI
                 TeamBLService team = new TeamBLService();
                 team.AddTeam(this.txtTeamId.Text, this.txtTeamName.Text);
             }
-            catch (TeamBLService.AddTeamException)
+            catch (AddTeamException)
             {
                 lblTeamsStatus.Text = "Tournament is full. Delete a team";
                 btnDeleteTeam.Visible = true;

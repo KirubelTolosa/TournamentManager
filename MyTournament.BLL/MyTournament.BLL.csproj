@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.4.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,9 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataModel\Exceptions\Exceptions.cs" />
     <Compile Include="DataModel\MemberBLDto.cs" />
-    <Compile Include="InterfaceTeamServices.cs" />
-    <Compile Include="InterfaceMemberServices.cs" />
+    <Compile Include="DIModule.cs" />
+    <Compile Include="ITeamServices.cs" />
+    <Compile Include="IMemberServices.cs" />
     <Compile Include="MemberBLService.cs" />
     <Compile Include="TeamBLService.cs" />
     <Compile Include="DataModel\TeamBLDto.cs" />
@@ -55,6 +60,9 @@
       <Project>{0be82b07-60d9-4a22-8cc8-50c7b3467168}</Project>
       <Name>MyTournament.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

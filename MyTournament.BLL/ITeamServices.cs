@@ -1,4 +1,4 @@
-﻿using MyTournament.BLL.DataModel;
+using MyTournament.BLL.DataModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyTournament.BLL
 {
-    interface ITeamServices
+    public interface ITeamBLService
     {
 
         List<TeamBLDto> GetAllTeams();
@@ -15,5 +15,6 @@ namespace MyTournament.BLL
 
         List<string> GetTeamIds();
         void DeleteTeam(string team_Id);
+    int CountTeams();
     }
 }
