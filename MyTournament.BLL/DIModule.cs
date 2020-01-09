@@ -12,9 +12,9 @@ namespace MyTournament.BLL
     public static void RegisterServices(ContainerBuilder builder)
     {
       builder.RegisterType<TeamBLService>().As<ITeamBLService>();
-      builder.RegisterType<MemberBLService>().As<MemberBLService>();
+      builder.RegisterType<MemberBLService>().As<IMemberBLService>();
+            DAL.DIModule.RegisterServices(builder);
 
-      DAL.DIModule.RegisterServices(builder);
     }
   }
 }

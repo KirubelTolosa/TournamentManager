@@ -27,6 +27,14 @@ namespace Tournament.Web.API.Controllers
           return teams;
         }
 
+
+        // GET: api/Teams
+        public string GetTeamCount()
+        {
+            var teamCount = teamBLService.CountTeams().ToString();
+            return teamCount;
+        }
+
         // GET: api/Team/5
         public string Get(int id)
         {

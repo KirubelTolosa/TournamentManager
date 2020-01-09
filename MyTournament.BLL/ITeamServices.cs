@@ -9,12 +9,10 @@ namespace MyTournament.BLL
 {
     public interface ITeamBLService
     {
-
         List<TeamBLDto> GetAllTeams();
         void AddTeam(String teamId, String teamName);
-
         List<string> GetTeamIds();
         void DeleteTeam(string team_Id);
-    int CountTeams();
+        int CountTeams();
     }
 }

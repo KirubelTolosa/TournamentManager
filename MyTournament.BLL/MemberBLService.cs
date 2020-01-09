@@ -15,7 +15,7 @@ namespace MyTournament.BLL
    {
         private IMemberDataRepository memberDataRepository;
 
-        public MemberBLService()
+       public MemberBLService()
         {
               memberDataRepository = new MemberDataRepository();
         }

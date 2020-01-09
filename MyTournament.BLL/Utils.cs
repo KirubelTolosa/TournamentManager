@@ -20,9 +20,7 @@ namespace MyTournament.BLL
                 Position = memberBLDto.Position,
                 Team_ID = memberBLDto.Team_Id
             };
-
-            return memberDADto;
-            
+            return memberDADto;            
         }
 
         public static MemberDADto ToDto(this MemberBLDto memberBLDto)
@@ -34,11 +32,8 @@ namespace MyTournament.BLL
                 Position = memberBLDto.Position,
                 Team_ID = memberBLDto.Team_Id
             };
-
             return memberDADto;
-
         }
-
         //create a static function that takes  MemberDADto object and returns MemberBLDto
     }
 }

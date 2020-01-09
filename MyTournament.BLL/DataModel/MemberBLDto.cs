@@ -20,7 +20,7 @@ namespace MyTournament.BLL.DataModel
         {
             this.Id = id;
             this.Name = name;
-            this.Position = position;
+            this.Position = position;   
             this.Team_Id = team_id; 
         }
         public MemberBLDto()

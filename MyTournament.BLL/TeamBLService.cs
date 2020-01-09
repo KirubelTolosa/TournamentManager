@@ -12,21 +12,20 @@ namespace MyTournament.BLL
 {
     public class TeamBLService : ITeamBLService
     {
-        private ITeamDataRepository teamDataRepository;
+       private ITeamDataRepository teamDataRepository;
 
         public TeamBLService()
         {
             this.teamDataRepository = new TeamDataRepository();
         }
         public TeamBLService(ITeamDataRepository teamDataRepository)
-        {
-             this.teamDataRepository = teamDataRepository;
-        }
+         {
+              this.teamDataRepository = teamDataRepository;
+         }
+        
         public List<TeamBLDto> GetAllTeams()
-        {
-
+        {         
             List<TeamDADto> daDtos = teamDataRepository.GetAllTeams();
-
             List<TeamBLDto> blDtos = new List<TeamBLDto>();
 
             foreach (var daDto in daDtos)
